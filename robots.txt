@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://consultarolfwinser.github.io/sitio-web/sitemap.xml
