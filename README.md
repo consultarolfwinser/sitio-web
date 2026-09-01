@@ -17,3 +17,12 @@ No es necesario modificar Cloudflare, el dominio ni Search Console para actualiz
 - `sitemap.xml`: URL canónica del sitio.
 - `site.webmanifest`: identidad básica para navegadores y dispositivos.
 - `404.html`: página personalizada para direcciones inexistentes.
+
+## Recursos descargables y fotografías
+
+- `recursos.html`: página de recursos gratuitos con descarga directa.
+- `assets/resources/`: archivos PDF disponibles para descarga.
+- `assets/images/resources/`: vistas previas de los materiales.
+- `assets/images/centro-naz/`: fotografías optimizadas para el carrusel del centro.
+
+Para sumar un nuevo recurso, se debe incorporar el PDF, su imagen de portada, una nueva tarjeta en `recursos.html` y la referencia correspondiente en `sitemap.xml` cuando cambie la estructura de páginas.
