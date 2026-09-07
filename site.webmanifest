@@ -1,0 +1,14 @@
+{
+  "name": "Rolf Winser Vargas · Terapeuta Ocupacional",
+  "short_name": "Rolf Winser TO",
+  "description": "Terapia Ocupacional en salud mental para adolescentes y personas adultas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f2eb",
+  "theme_color": "#15372f",
+  "lang": "es-CL",
+  "icons": [
+    {"src": "/assets/images/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/assets/images/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
