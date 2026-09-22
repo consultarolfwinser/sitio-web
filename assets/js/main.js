@@ -206,3 +206,48 @@ document.querySelectorAll('[data-hotmart-link]').forEach(link => {
     }
   });
 });
+
+const linkLocation = (link) => {
+  if (link.classList.contains('floating-whatsapp')) return 'floating_button';
+  if (link.closest('.hero-actions')) return 'hero';
+  if (link.closest('.contact-panel')) return 'contact_panel';
+  if (link.closest('footer')) return 'footer';
+  return 'content';
+};
+
+document.querySelectorAll('a[href^="https://wa.me/"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'contact_click', {
+        contact_method: 'whatsapp',
+        link_location: linkLocation(link),
+        link_text: (link.textContent || link.getAttribute('aria-label') || '').trim(),
+        page_path: window.location.pathname
+      });
+    }
+  });
+});
+
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'contact_click', {
+        contact_method: 'email',
+        link_location: linkLocation(link),
+        link_text: (link.textContent || link.getAttribute('aria-label') || '').trim(),
+        page_path: window.location.pathname
+      });
+    }
+  });
+});
+
+document.querySelectorAll('.social-instagram, .social-tiktok').forEach(link => {
+  link.addEventListener('click', () => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'social_profile_click', {
+        social_network: link.classList.contains('social-instagram') ? 'instagram' : 'tiktok',
+        page_path: window.location.pathname
+      });
+    }
+  });
+});
