@@ -251,3 +251,40 @@ document.querySelectorAll('.social-instagram, .social-tiktok').forEach(link => {
     }
   });
 });
+
+document.querySelectorAll('[data-share-page]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const status = document.querySelector('[data-share-status]');
+    const shareData = {
+      title: document.title,
+      text: 'Información sobre Terapia Ocupacional en salud mental y funcionamiento cotidiano.',
+      url: window.location.href
+    };
+    let shareMethod = 'unavailable';
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        shareMethod = 'native_share';
+        if (status) status.textContent = 'Gracias por compartir esta información.';
+      } else if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(window.location.href);
+        shareMethod = 'clipboard';
+        if (status) status.textContent = 'Enlace copiado. Ya puedes compartirlo donde prefieras.';
+      } else if (status) {
+        status.textContent = 'Puedes copiar la dirección de esta página desde tu navegador para compartirla.';
+      }
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'page_share', {
+          share_method: shareMethod,
+          page_path: window.location.pathname
+        });
+      }
+    } catch (error) {
+      if (error?.name !== 'AbortError' && status) {
+        status.textContent = 'No fue posible abrir las opciones para compartir.';
+      }
+    }
+  });
+});
