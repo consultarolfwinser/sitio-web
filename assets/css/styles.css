@@ -269,6 +269,7 @@ body.modal-open{overflow:hidden}
 
 /* Portada orientada a conversión · septiembre 2026 */
 .hero-meta{grid-template-columns:.82fr 1.22fr 1fr}
+#trayectoria,#ubicacion{scroll-margin-top:96px}
 #consulta{padding-bottom:82px}
 #trayectoria{padding-top:86px;padding-bottom:86px}
 .profile-evidence{display:grid;grid-template-columns:148px minmax(0,1fr);gap:30px;margin-top:30px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
