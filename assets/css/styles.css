@@ -281,6 +281,8 @@ body.modal-open{overflow:hidden}
 .profile-highlights span,.profile-recognition>span{display:block;margin-bottom:6px;color:#71867b;font-size:.64rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
 .profile-highlights h3{font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;font-weight:600}
 .profile-highlights p{margin:5px 0 0;color:var(--muted);font-size:.84rem;line-height:1.5}
+.profile-highlights .teaching-recognition{margin-top:10px;padding-top:10px;border-top:1px solid rgba(23,55,47,.1);color:#71867b;font-size:.72rem;line-height:1.45}
+.teaching-recognition b{margin-right:4px;color:#b77b3c;font-size:.9rem}
 .profile-recognition{margin-top:18px;padding:22px 22px 22px 26px}
 .profile-continuing-education{margin-top:12px;padding:0;border:1px solid var(--line);border-radius:14px;background:transparent}
 .profile-continuing-education summary{position:relative;padding:17px 48px 17px 20px;color:var(--ink);font-size:.82rem;font-weight:800;cursor:pointer;list-style:none}
