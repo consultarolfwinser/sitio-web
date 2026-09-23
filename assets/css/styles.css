@@ -265,3 +265,68 @@ body.modal-open{overflow:hidden}
 @media(max-width:640px){.seo-hero{padding:122px 0 68px}.seo-section,.seo-related,.seo-cta{padding:66px 0}.seo-card-grid{grid-template-columns:1fr}.seo-card{min-height:0}.resource-landing-hero img{width:min(250px,72vw)}}
 
 .resource-detail-link{display:inline-block;margin:8px 0 14px;color:#8a683f;font-size:.82rem;font-weight:800;text-decoration:underline;text-underline-offset:4px}
+
+/* Portada orientada a conversión · septiembre 2026 */
+.hero-meta{grid-template-columns:.82fr 1.22fr 1fr}
+#consulta{padding-bottom:82px}
+#trayectoria{padding-top:86px;padding-bottom:86px}
+.profile-evidence{display:grid;grid-template-columns:148px minmax(0,1fr);gap:30px;margin-top:30px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.profile-stat{align-self:start;padding-left:17px;border-left:3px solid var(--accent)}
+.profile-stat strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:4.6rem;font-weight:500;letter-spacing:-.06em;line-height:.85}
+.profile-stat span{display:block;margin-top:11px;color:var(--muted);font-size:.78rem;font-weight:700;line-height:1.45}
+.profile-highlights{display:grid}
+.profile-highlights article{padding:0 0 17px}
+.profile-highlights article+article{padding-top:17px;border-top:1px solid var(--line)}
+.profile-highlights article:last-child{padding-bottom:0}
+.profile-highlights span,.profile-recognition>span{display:block;margin-bottom:6px;color:#71867b;font-size:.64rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+.profile-highlights h3{font-family:Georgia,"Times New Roman",serif;font-size:1.2rem;font-weight:600}
+.profile-highlights p{margin:5px 0 0;color:var(--muted);font-size:.84rem;line-height:1.5}
+.profile-recognition{margin-top:18px;padding:22px 22px 22px 26px}
+.profile-continuing-education{margin-top:12px;padding:0;border:1px solid var(--line);border-radius:14px;background:transparent}
+.profile-continuing-education summary{position:relative;padding:17px 48px 17px 20px;color:var(--ink);font-size:.82rem;font-weight:800;cursor:pointer;list-style:none}
+.profile-continuing-education summary::-webkit-details-marker{display:none}
+.profile-continuing-education summary:after{position:absolute;top:50%;right:20px;color:#71867b;font-size:1.25rem;font-weight:500;line-height:1;content:"+";transform:translateY(-50%)}
+.profile-continuing-education[open] summary:after{content:"–"}
+.profile-continuing-education>div{padding:0 20px 20px;border-top:1px solid var(--line)}
+.profile-continuing-education strong{padding-top:17px;font-size:1rem}
+.professional-register{margin-top:15px}
+#proceso{padding-top:82px;padding-bottom:82px}
+.resources-preview{padding-top:76px;padding-bottom:76px}
+#preguntas{padding-top:82px;padding-bottom:82px}
+#ubicacion{padding-top:82px;padding-bottom:82px}
+.social-invite-compact{padding:36px 0 58px!important;background:var(--paper)}
+.social-invite-compact .social-invite-card{grid-template-columns:minmax(0,1fr) auto;gap:44px;align-items:center;padding:32px 36px;border:1px solid var(--line);border-radius:18px;background:var(--soft);color:var(--ink);box-shadow:none}
+.social-invite-compact .social-invite-intro h2{max-width:620px;font-size:clamp(1.75rem,2.6vw,2.55rem)}
+.social-invite-compact .social-invite-intro>p:last-child{max-width:620px;margin:12px 0 0;color:var(--muted);font-size:.9rem}
+.social-invite-compact .social-invite-platforms{display:flex;grid-template-columns:none;gap:10px}
+.social-invite-compact .social-platform{grid-template-columns:30px 1fr;gap:10px;width:178px;min-height:76px;padding:13px 15px;border:1px solid rgba(23,55,47,.18);border-radius:13px;background:var(--paper);color:var(--ink);box-shadow:none}
+.social-invite-compact .social-platform:hover{border-color:rgba(23,55,47,.34);background:#fff}
+.social-invite-compact .social-platform svg{width:27px;height:27px}
+.social-invite-compact .social-platform small{margin-bottom:1px;color:#71867b;font-size:.59rem}
+.social-invite-compact .social-platform strong{color:var(--ink);font-size:.78rem}
+.social-invite-compact .social-platform em{margin-top:4px;color:#8a683f;font-size:.69rem}
+.contact-section{padding-bottom:78px}
+
+@media(max-width:980px){
+  .hero-meta{grid-template-columns:1fr 1fr}
+  .profile-evidence{grid-template-columns:130px minmax(0,1fr)}
+  .social-invite-compact .social-invite-card{grid-template-columns:1fr;gap:24px;padding:30px}
+}
+
+@media(max-width:640px){
+  #consulta,#trayectoria,#proceso,#preguntas,#ubicacion{padding-top:66px;padding-bottom:66px}
+  .resources-preview{padding-top:64px;padding-bottom:64px}
+  .profile-evidence{grid-template-columns:1fr;gap:22px;padding:23px 0}
+  .profile-stat{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:end}
+  .profile-stat strong{font-size:4rem}
+  .profile-stat span{max-width:220px;margin:0 0 2px}
+  .profile-recognition{padding:20px 18px 20px 22px}
+  .profile-continuing-education summary{padding:16px 44px 16px 17px}
+  .profile-continuing-education>div{padding:0 17px 18px}
+  .social-invite-compact{padding:20px 0 48px!important}
+  .social-invite-compact .social-invite-card{gap:22px;padding:26px 20px}
+  .social-invite-compact .social-invite-platforms{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .social-invite-compact .social-platform{width:auto;min-height:80px;padding:12px}
+  .social-invite-compact .social-platform strong{font-size:.72rem}
+  .contact-section{padding-bottom:64px}
+}
