@@ -270,7 +270,7 @@ body.modal-open{overflow:hidden}
 /* Portada orientada a conversión · septiembre 2026 */
 .hero-meta{grid-template-columns:.82fr 1.22fr 1fr}
 #consulta{padding-bottom:82px}
-#trayectoria{padding-top:86px;padding-bottom:86px}
+#trayectoria{padding-top:86px;padding-bottom:64px}
 .profile-evidence{display:grid;grid-template-columns:148px minmax(0,1fr);gap:30px;margin-top:30px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .profile-stat{align-self:start;padding-left:17px;border-left:3px solid var(--accent)}
 .profile-stat strong{display:block;font-family:Georgia,"Times New Roman",serif;font-size:4.6rem;font-weight:500;letter-spacing:-.06em;line-height:.85}
@@ -295,11 +295,11 @@ body.modal-open{overflow:hidden}
 .profile-continuing-education>div{padding:0 20px 20px;border-top:1px solid var(--line)}
 .profile-continuing-education strong{padding-top:17px;font-size:1rem}
 .professional-register{margin-top:15px}
-#proceso{padding-top:82px;padding-bottom:82px}
-.resources-preview{padding-top:76px;padding-bottom:76px}
-#preguntas{padding-top:82px;padding-bottom:82px}
-#ubicacion{padding-top:82px;padding-bottom:82px}
-.social-invite-compact{padding:36px 0 58px!important;background:var(--paper)}
+#proceso{padding-top:64px;padding-bottom:64px}
+.resources-preview{padding-top:60px;padding-bottom:60px}
+#preguntas{padding-top:64px;padding-bottom:64px}
+#ubicacion{padding-top:68px;padding-bottom:58px}
+.social-invite-compact{padding:24px 0 52px!important;background:var(--paper)}
 .social-invite-compact .social-invite-card{grid-template-columns:minmax(0,1fr) auto;gap:44px;align-items:center;padding:32px 36px;border:1px solid var(--line);border-radius:18px;background:var(--soft);color:var(--ink);box-shadow:none}
 .social-invite-compact .social-invite-intro h2{max-width:620px;font-size:clamp(1.75rem,2.6vw,2.55rem)}
 .social-invite-compact .social-invite-intro>p:last-child{max-width:620px;margin:12px 0 0;color:var(--muted);font-size:.9rem}
@@ -319,8 +319,12 @@ body.modal-open{overflow:hidden}
 }
 
 @media(max-width:640px){
-  #consulta,#trayectoria,#proceso,#preguntas,#ubicacion{padding-top:66px;padding-bottom:66px}
-  .resources-preview{padding-top:64px;padding-bottom:64px}
+  #consulta{padding-top:66px;padding-bottom:58px}
+  #trayectoria{padding-top:58px;padding-bottom:48px}
+  #proceso{padding-top:52px;padding-bottom:56px}
+  .resources-preview{padding-top:54px;padding-bottom:54px}
+  #preguntas{padding-top:54px;padding-bottom:54px}
+  #ubicacion{padding-top:54px;padding-bottom:48px}
   .profile-evidence{grid-template-columns:1fr;gap:22px;padding:23px 0}
   .profile-stat{display:grid;grid-template-columns:auto 1fr;gap:15px;align-items:end}
   .profile-stat strong{font-size:4rem}
@@ -328,7 +332,7 @@ body.modal-open{overflow:hidden}
   .profile-recognition{padding:20px 18px 20px 22px}
   .profile-continuing-education summary{padding:16px 44px 16px 17px}
   .profile-continuing-education>div{padding:0 17px 18px}
-  .social-invite-compact{padding:20px 0 48px!important}
+  .social-invite-compact{padding:14px 0 42px!important}
   .social-invite-compact .social-invite-card{gap:22px;padding:26px 20px}
   .social-invite-compact .social-invite-platforms{display:grid;grid-template-columns:1fr 1fr;width:100%}
   .social-invite-compact .social-platform{width:auto;min-height:80px;padding:12px}
