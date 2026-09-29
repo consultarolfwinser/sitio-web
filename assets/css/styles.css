@@ -395,6 +395,20 @@ body.modal-open{overflow:hidden}
 .social-invite-compact .social-platform em{margin-top:4px;color:#8a683f;font-size:.69rem}
 .contact-section{padding-bottom:78px}
 
+/* Accesos para pacientes actuales y profesionales en la navegación principal. */
+#menu-principal a{white-space:nowrap}
+#menu-principal a[aria-current="page"]{color:#fff;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:7px}
+@media(max-width:1200px){
+  .site-header .menu-button{display:block}
+  .site-header #menu-principal{display:none;position:absolute;top:78px;left:0;right:0;max-height:calc(100dvh - 78px);overflow-y:auto;flex-direction:column;align-items:stretch;gap:4px;padding:16px 24px 24px;background:rgba(16,40,32,.98);box-shadow:0 18px 30px rgba(0,0,0,.12)}
+  .site-header #menu-principal.open{display:flex}
+  .site-header #menu-principal a{display:flex;align-items:center;min-height:44px}
+  .site-header #menu-principal .nav-action{justify-content:center;margin-top:8px}
+}
+@media(max-width:640px){
+  .site-header #menu-principal{top:74px;max-height:calc(100dvh - 74px)}
+}
+
 @media(max-width:980px){
   .hero-meta{grid-template-columns:1fr 1fr}
   .profile-evidence{grid-template-columns:130px minmax(0,1fr)}
