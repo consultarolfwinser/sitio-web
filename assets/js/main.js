@@ -37,16 +37,7 @@ document.addEventListener('keydown', event => {
   }
 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -7% 0px' });
-
-document.querySelectorAll('.reveal:not(.is-visible)').forEach(el => observer.observe(el));
+// Content stays visible even when JavaScript or animation APIs are unavailable.
 if (year) year.textContent = new Date().getFullYear();
 
 const carousel = document.querySelector('[data-carousel]');
@@ -56,7 +47,14 @@ if (carousel) {
   const dots = [...carousel.querySelectorAll('[data-carousel-dot]')];
   const previous = carousel.querySelector('[data-carousel-prev]');
   const next = carousel.querySelector('[data-carousel-next]');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let userPaused = false;
+  let pointerInside = false;
+  let focusInside = carousel.contains(document.activeElement);
+  const pauseButton = document.createElement('button');
+  pauseButton.type = 'button';
+  pauseButton.className = 'carousel-pause';
+  if (slides.length > 1) carousel.append(pauseButton);
   let current = 0;
   let timer;
 
@@ -78,11 +76,22 @@ if (carousel) {
   const stopCarousel = () => window.clearInterval(timer);
   const startCarousel = () => {
     stopCarousel();
-    if (!reduceMotion && slides.length > 1) {
+    if (!motionPreference.matches && !userPaused && !pointerInside && !focusInside && !document.hidden && slides.length > 1) {
       timer = window.setInterval(() => showSlide(current + 1), 6000);
     }
   };
+  const updatePlayback = () => {
+    pauseButton.disabled = motionPreference.matches;
+    pauseButton.textContent = motionPreference.matches
+      ? 'Movimiento automático desactivado'
+      : userPaused ? 'Reanudar imágenes' : 'Pausar imágenes';
+    startCarousel();
+  };
 
+  pauseButton.addEventListener('click', () => {
+    userPaused = !userPaused;
+    updatePlayback();
+  });
   previous?.addEventListener('click', () => {
     showSlide(current - 1);
     startCarousel();
@@ -95,14 +104,27 @@ if (carousel) {
     showSlide(index);
     startCarousel();
   }));
-  carousel.addEventListener('mouseenter', stopCarousel);
-  carousel.addEventListener('mouseleave', startCarousel);
-  carousel.addEventListener('focusin', stopCarousel);
-  carousel.addEventListener('focusout', startCarousel);
-  document.addEventListener('visibilitychange', () => document.hidden ? stopCarousel() : startCarousel());
+  carousel.addEventListener('mouseenter', () => {
+    pointerInside = true;
+    stopCarousel();
+  });
+  carousel.addEventListener('mouseleave', () => {
+    pointerInside = false;
+    startCarousel();
+  });
+  carousel.addEventListener('focusin', () => {
+    focusInside = true;
+    stopCarousel();
+  });
+  carousel.addEventListener('focusout', event => {
+    focusInside = carousel.contains(event.relatedTarget);
+    startCarousel();
+  });
+  document.addEventListener('visibilitychange', startCarousel);
+  motionPreference.addEventListener('change', updatePlayback);
 
   showSlide(0);
-  startCarousel();
+  updatePlayback();
 }
 
 const downloadModal = document.querySelector('[data-download-modal]');
