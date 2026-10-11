@@ -496,3 +496,6 @@ body.modal-open{overflow:hidden}
 /* El foco necesita contraste tanto en claro como en fondos azul profundo. */
 :focus-visible,.download-status:focus-visible{outline:3px solid #213F48;outline-offset:4px}
 .site-header :focus-visible,.hero :focus-visible,.section-deep :focus-visible,.seo-hero :focus-visible,.seo-cta :focus-visible,.contact-panel :focus-visible,footer :focus-visible{outline-color:#D1A95D}
+
+/* Numeración legible de recursos en fondos claros; el dorado queda como acento. */
+.resource-number{color:#213F48}
